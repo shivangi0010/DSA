@@ -1,18 +1,13 @@
-// Accept size n from user and create an n size array then take n inputs into it and finally print the sum & average of all elements.
-import promptSync from "prompt-sync"
+// Find the greatest element (Ex: {2, 96, 69, 77, 145, 20} = Max element = 145 found at 4 index)
 
-const prompt = promptSync()
-
-
-let n = Number(prompt("Enter the size of array"))
-
-let sum = 0
-
-for(let i = 1; i<=n ; i++){
-    let a = Number(prompt("Enter the element"))
-    console.log(a)
-   sum+=a
+let arr = [2, 96 , 69 , 77, 145 , 200]
+let max = arr[0]
+index = 0
+for(let i = 1 ; i< arr.length ; i++){
+    if(arr[i] > max){
+        max = arr[i]
+        index = i
+    }
 }
-console.log("Sum:",sum)
-console.log("Average:",sum/n)
+console.log("greatest element is :", max,"found at index",index)  
 

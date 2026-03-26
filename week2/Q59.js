@@ -1,19 +1,11 @@
-// Take n integer inputs from user and store them in an array. Now, copy all the elements into another array in reverse order and print it.
+// Array left Rotation by 1
 
+let arr = [10,20,30,40,50]
+let first = arr[0]
 
-import PromptSync from "prompt-sync";
-
-const prompt = PromptSync()
-
-let n = Number(prompt("Enter size of the array: "))
-let arr = []
-for(let i = 0 ; i<n ; i++){
-    let element = Number(prompt("Enter the element: "))
-    arr.push(element)
+for(let i = 0; i<arr.length ; i++){
+    arr[i] = arr[i+1]
 }
-let arr2 = []
-for(let j = arr.length-1 ; j>=0 ;j--){
-    arr2.push(arr[j])
-}
-console.log("Original:",arr)
-console.log("Reversed: ",arr2)
+arr[arr.length-1] = first
+
+console.log(arr)

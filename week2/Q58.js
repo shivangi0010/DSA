@@ -1,17 +1,19 @@
-// Check if array is sorted in increasing order or not. (Ex 1 - { 1, 5, 8, 9, 10, 15 } - OP = \YES\"
+// Take n integer inputs from user and store them in an array. Now, copy all the elements into another array in reverse order and print it.
 
-let arr = [1, 5 ,8 ,9 ,10 ,15]
 
-let isIncreasing = true
+import PromptSync from "prompt-sync";
 
-for(let i = 0 ; i<arr.length-1 ; i++){
-    if(arr[i] >= arr[i+1]){
-        isIncreasing = false
-        break
-    }
+const prompt = PromptSync()
+
+let n = Number(prompt("Enter size of the array: "))
+let arr = []
+for(let i = 0 ; i<n ; i++){
+    let element = Number(prompt("Enter the element: "))
+    arr.push(element)
 }
-if(!isIncreasing){
-    console.log("no, the array is not in increasing order")
-}else{
-    console.log("the array is in increasing order")
+let arr2 = []
+for(let j = arr.length-1 ; j>=0 ;j--){
+    arr2.push(arr[j])
 }
+console.log("Original:",arr)
+console.log("Reversed: ",arr2)

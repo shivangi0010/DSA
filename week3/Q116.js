@@ -1,0 +1,38 @@
+// Strong Password Checker 2 
+
+function passwordChecker(password){
+
+    if(password.length < 8) return false
+
+    let hasLower = false
+    let hasUpper = false
+    let hasDigit = false
+    let hasSpecial = false
+
+    let special = "!@#$%^&*()-+"
+
+    for(let i = 0; i < password.length; i++){
+        let ch = password[i]
+
+        if(i > 0 && ch === password[i-1]){
+            return false
+        }
+        if(ch >= 'a' && ch <= 'z'){
+            hasLower = true
+        }
+        else if(ch >= 'A' && ch <= 'Z'){
+            hasUpper = true
+        }
+        else if(ch >= '0' && ch <= '9'){
+            hasDigit = true
+        }
+        else if(special.includes(ch)){
+            hasSpecial = true
+        }
+    }
+
+    return hasLower && hasUpper && hasDigit && hasSpecial
+};
+
+console.log(passwordChecker("IloveLe3tcode!")) 
+console.log(passwordChecker("Me+You--IsMyDream")) 
